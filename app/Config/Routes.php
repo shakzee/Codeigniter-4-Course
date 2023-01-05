@@ -42,6 +42,7 @@ $routes->set404Override();
 
 $routes->get('/',[Home::class,'index']);
 $routes->get('/xyx/(:num)',[Home::class,'contact']);
+$routes->get('/about',[Home::class,'about']);
 
 /*
  * --------------------------------------------------------------------
