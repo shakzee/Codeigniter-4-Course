@@ -1,6 +1,7 @@
 <?php
 
 namespace Config;
+use App\Controllers\Home;
 
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
@@ -35,7 +36,12 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Contact::index');
+//$routes->get('/', 'Home::index');
+
+//$routes->get('/contact/(:num)/(:num)', 'Contact::index/$1/$2');
+
+$routes->get('/',[Home::class,'index']);
+$routes->get('/xyx/(:num)',[Home::class,'contact']);
 
 /*
  * --------------------------------------------------------------------
